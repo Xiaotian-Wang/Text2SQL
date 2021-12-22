@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="2fbbc577-6b77-452b-8c93-542ed58502e1" name="ratsql">
+        <fileTransfer accessType="SFTP" host="10.216.6.224" port="7288" sshConfigId="54454901-13d0-4471-9b69-a0b1b6dcadfb" sshConfig="root@10.216.6.224:7288 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="f568d2fa-7c3b-4ee3-94fe-b06b27733b8b" name="root@10.216.6.224:7288 password">
+        <fileTransfer rootFolder="/root" accessType="SFTP" host="10.216.6.224" port="7288" sshConfigId="54454901-13d0-4471-9b69-a0b1b6dcadfb" sshConfig="root@10.216.6.224:7288 password" />
+      </webServer>
+    </option>
+  </component>
+</project>
