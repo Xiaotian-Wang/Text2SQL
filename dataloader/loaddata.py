@@ -247,3 +247,4 @@ if __name__ == "__main__":
     data_schema_path = '../data/CSpider/db_schema.json'
     a = load_tables([data_schema_path])
     data1 = SpiderDataset(paths=['../data/CSpider/dev.json'], tables_paths=[data_schema_path], db_path=data_path)
+
