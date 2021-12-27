@@ -333,14 +333,6 @@ class PositionwiseFeedForward(nn.Module):
         return self.w_2(self.dropout(F.relu(self.w_1(x))))
 
 
-class Encoder1(torch.nn.Module):
-
-    def __init__(self, pretrained_model_type):
-        super().__init__()
-        self.tokenizer = BertTokenizer.from_pretrained(pretrained_model_type)
-
-    def forward(self, inputs):
-        pass
 
 
 if __name__ == '__main__':
