@@ -242,6 +242,31 @@ class SpiderDataset(torch.utils.data.Dataset):
             }
 
 
+def _linking_wrapper(fn_linking):
+    """wrapper for linking function, do linking and id convert
+
+    Args:
+        fn_linking (TYPE): NULL
+
+    Returns: TODO
+
+    Raises: NULL
+    """
+    link_result = fn_linking(self.question_tokens, self.db)
+
+    # convert words id to BERT word pieces id
+    new_result = {}
+    for m_name, matches in link_result.items():
+        new_match = {}
+        for pos_str, match_type in matches.items():
+            qid_str, col_tab_id_str = pos_str.split(',')
+            qid, col_tab_id = int(qid_str), int(col_tab_id_str)
+            for real_qid in self.token_mapping[qid]:
+                new_match[f'{real_qid},{col_tab_id}'] = match_type
+        new_result[m_name] = new_match
+    return new_result
+
+
 if __name__ == "__main__":
     data_path = '../data/CSpider/database'
     data_schema_path = '../data/CSpider/db_schema.json'
